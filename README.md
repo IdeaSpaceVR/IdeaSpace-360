@@ -1,5 +1,4 @@
 # IdeaSpace 360 theme
-This is a pre-installed theme and part of <a href="https://github.com/IdeaSpaceVR/IdeaSpace">IdeaSpaceVR CMS</a>.
+This theme comes pre-installed with the <a href="https://github.com/IdeaSpaceVR/IdeaSpace">IdeaSpaceVR CMS</a>.
 
-
-
+More info: <a href="https://www.ideaspacevr.org/themes/ideaspace-360">https://www.ideaspacevr.org/themes/ideaspace-360</a>.
