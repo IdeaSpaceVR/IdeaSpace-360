@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Generate a preview image from photo spheres used for the navigation menu in VR.
+ * Generate a preview image from photo spheres shown in the navigation menu in VR.
  */
 Event::listen('ideaspace-360-photo-sphere-viewer.photo-spheres.photo-sphere', function($image) {
 
@@ -13,6 +13,4 @@ Event::listen('ideaspace-360-photo-sphere-viewer.photo-spheres.photo-sphere', fu
     ];
 });
 
-
- 
 
