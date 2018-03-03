@@ -1,3 +1,7 @@
+## 1.7
+
+- special characters (umlauts, etc.) in text boxes are now supported and shown 
+
 ## 1.6
 
 - Deprecated #theme-compatibility config parameter
