@@ -1,6 +1,7 @@
 ## 1.7
 
-- special characters (umlauts, etc.) in text boxes are now supported and shown 
+- Hide controller models if HMD is connected but site is used in desktop mode
+- Updated to A-Frame 0.8.2
 
 ## 1.6
 

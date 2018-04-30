@@ -9,9 +9,11 @@ AFRAME.registerComponent('isvr-photosphere-menu-navigation', {
     init: function() {
 
         this.el.addEventListener('click', this.onClick.bind(this));
-
+var counter=0;
         /* hover */
         this.el.addEventListener('mouseenter', (function() {
+console.log('mouseenter '+counter);
+counter++;
           var children = this.el.childNodes;
           for (var i = 0; i < children.length; i++) {
             if (children[i].tagName == 'A-PLANE') {
@@ -22,6 +24,7 @@ AFRAME.registerComponent('isvr-photosphere-menu-navigation', {
 
         /* hover */
         this.el.addEventListener('mouseleave', (function() {
+console.log('mouseleave');
           var children = this.el.childNodes;
           for (var i = 0; i < children.length; i++) {
             if (children[i].tagName == 'A-PLANE') {
