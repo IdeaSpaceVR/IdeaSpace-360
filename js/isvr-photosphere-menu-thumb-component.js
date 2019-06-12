@@ -40,8 +40,6 @@ AFRAME.registerComponent('isvr-photosphere-menu-thumb', {
 
                     document.querySelector('#photosphere-menu').setAttribute('visible', false);
 
-                    self.el.sceneEl.systems['isvr-scene-helper'].hideCursor();
-
                     /* set visible to true on hotspot wrapper, opacity is still 0 so they are invisible */
                     var hotspot_wrapper = document.querySelectorAll('.hotspot-wrapper-content-id-' + content_id);
                     for (var i = 0; i < hotspot_wrapper.length; i++) {

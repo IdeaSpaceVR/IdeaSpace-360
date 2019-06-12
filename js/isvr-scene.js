@@ -1,18 +1,5 @@
-AFRAME.registerSystem('isvr-scene-helper', {
-
-    showCursor: function () {
-
-        /* nothing to do */
-    },
-
-    hideCursor: function () {
-
-        /* nothing to do */
-    },
-
-});
-
 AFRAME.registerComponent('isvr-scene', {
+
   
     init: function () {
 
@@ -28,13 +15,13 @@ AFRAME.registerComponent('isvr-scene', {
             }
 
             /* workaround for non-positional tracking devices and a-frame 0.7.0 */
-            if (!AFRAME.utils.device.checkHasPositionalTracking()) {
+            /*if (!AFRAME.utils.device.checkHasPositionalTracking()) {
                 document.querySelector('#camera').setAttribute('camera', {
                     far: 10000,
                     fov: 80,
                     near: 0.1
                 });
-            }
+            }*/
 
 						/* show controllers only in VR */
             var laser_controls = document.querySelectorAll('.laser-controls');
