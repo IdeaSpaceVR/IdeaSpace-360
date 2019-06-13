@@ -27,7 +27,8 @@ AFRAME.registerComponent('isvr-photosphere-menu', {
         this.zaxis = new THREE.Vector3(0, 0, 1);
 
         this.pivot = new THREE.Object3D();
-        this.el.object3D.position.set(0, 1.6, -4);
+        //this.el.object3D.position.set(0, 1.6, -4);
+        this.el.object3D.position.set(0, 100, -4);
 
         this.el.sceneEl.object3D.add(this.pivot);
         this.pivot.add(this.el.object3D);
@@ -91,7 +92,7 @@ AFRAME.registerComponent('isvr-photosphere-menu', {
 						document.getElementsByClassName('img-photosphere-thumb').length > 1 && 
 						this.el.getAttribute('visible') == true) {
 
-            this.el.setAttribute('position', { x: 0, y: 10, z: -4 });
+            this.el.setAttribute('position', { x: 0, y: 100, z: -4 });
             this.el.setAttribute('visible', false);
 
             var content_id = document.querySelector('#photosphere').getAttribute('data-content-id');

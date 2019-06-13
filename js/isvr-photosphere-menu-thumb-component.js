@@ -67,7 +67,7 @@ AFRAME.registerComponent('isvr-photosphere-menu-thumb', {
                     camera.setAttribute('rotation', { x:0, y:0, z:0 });
 
                     document.querySelector('#photosphere-menu').setAttribute('visible', false);
-                    document.querySelector('#photosphere-menu').setAttribute('position', { x: 0, y:10, z:-4 });
+                    document.querySelector('#photosphere-menu').setAttribute('position', { x: 0, y:100, z:-4 });
 
                     /* set visible to true on hotspot wrapper, opacity is still 0 so they are invisible */
                     var hotspot_wrapper = document.querySelectorAll('.hotspot-wrapper-content-id-' + content_id);

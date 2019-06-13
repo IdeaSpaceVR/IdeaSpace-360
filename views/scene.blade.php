@@ -40,7 +40,6 @@
 						data-current-page="1" 
 						isvr-photosphere-menu 
 						id="photosphere-menu" 
-						position="0 10 -4" 
 						visible="false">
             @if (count($content['photo-spheres']) > 3)
             <a-entity isvr-photosphere-menu-navigation id="menu-arrow-up" position="0 1.5 0" visible="false" geometry="primitive: plane; width: 1; height: 0.5" material="transparent: true; opacity: 0">
