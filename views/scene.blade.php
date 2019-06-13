@@ -75,7 +75,7 @@
 								radius-inner="0.0625" 
 								radius-outer="0.125" 
 								theta-length="310" 
-								animation__rotation="property: rotation; to: 0 0 -360; dur: 5000; easing: linear; loop: true; autoplay: true; pauseEvents: stop-photosphere-loading-anim-1" 
+								animation__rotation="property: rotation; to: 0 0 -360; dur: 5000; easing: linear; loop: true; autoplay: true; startEvents: photosphere-loading-anim-1; pauseEvents: stop-photosphere-loading-anim-1" 
 								id="photosphere-loading-1">
             </a-ring>
             @endif
@@ -107,7 +107,7 @@
 								radius-inner="0.0625" 
 								radius-outer="0.125" 
 								theta-length="310" 
-								animation__rotation="property: rotation; to: 0 0 -360; dur: 5000; easing: linear; loop: true; autoplay: true; pauseEvents: stop-photosphere-loading-anim-2" 
+								animation__rotation="property: rotation; to: 0 0 -360; dur: 5000; easing: linear; loop: true; autoplay: true; startEvents: photosphere-loading-anim-2; pauseEvents: stop-photosphere-loading-anim-2" 
 								id="photosphere-loading-2">
             </a-ring>
             @endif
@@ -139,7 +139,7 @@
 								radius-inner="0.0625" 
 								radius-outer="0.125" 
 								theta-length="310" 
-								animation__rotation="property: rotation; to: 0 0 -360; dur: 5000; easing: linear; loop: true; autoplay: true; pauseEvents: stop-photosphere-loading-anim-3" 
+								animation__rotation="property: rotation; to: 0 0 -360; dur: 5000; easing: linear; loop: true; autoplay: true; startEvents: photosphere-loading-anim-3; pauseEvents: stop-photosphere-loading-anim-3" 
 								id="photosphere-loading-3">
             </a-ring>
             @endif
