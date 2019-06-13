@@ -52,8 +52,8 @@ AFRAME.registerComponent('isvr-init-assets', {
 														document.querySelector('#photosphere-start-btn-circle').emit('stop-photosphere-start-btn-anim');
 
                             // workaround because of interference with menu
-                            document.querySelector('#intro-0').setAttribute('position', { x: 0, y: 1.6, z: -10 });
-                            document.querySelector('#no-hmd-intro').setAttribute('position', { x: 0, y: 1.6, z: -10 });
+                            document.querySelector('#intro-0').setAttribute('position', { x: 0, y: 100, z: -2.1 });
+                            document.querySelector('#no-hmd-intro').setAttribute('position', { x: 0, y: 100, z: -2.1 });
 
                             document.querySelector('#intro-0').setAttribute('visible', false);
                             document.querySelector('#no-hmd-intro').setAttribute('visible', false);

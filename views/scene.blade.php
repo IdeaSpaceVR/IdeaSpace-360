@@ -4,12 +4,12 @@
 
 @section('scene')
 
-    <a-scene /*stats*/ isvr-scene renderer="antialias: true" background="color: #000000" loading-screen="dotsColor: #FFFFFF; backgroundColor: #000000">
+    <a-scene isvr-scene renderer="antialias: true" background="color: #000000" loading-screen="dotsColor: #FFFFFF; backgroundColor: #000000">
 
     @include('theme::assets')
 
 
-<a-entity log geometry="primitive: plane" material="color: #111" text="color: lightgreen" position="0 0 -4"></a-entity>
+				<!--a-entity log geometry="primitive: plane" material="color: #111" text="color: lightgreen" position="0 0 -4"></a-entity//-->
 
 
         <a-entity id="camera-wrapper" position="0 1.6 0">
@@ -19,7 +19,6 @@
                 look-controls>
                 <a-entity
                     cursor="fuse: false; rayOrigin: mouse"
-                    raycaster="objects: .collidable" 
                     id="cursor"
                     position="0 0 -1.9"
                     geometry="primitive: circle; radius: 0.02;"
@@ -29,13 +28,20 @@
             </a-entity>
         </a-entity>
 
-        <a-entity laser-controls="hand: left" raycaster="near: 0.5; far: 5001" line="color: #FFFFFF" class="laser-controls" visible="false"></a-entity>
-        <a-entity laser-controls="hand: right" raycaster="near: 0.5; far: 5001" line="color: #FFFFFF" class="laser-controls" visible="false"></a-entity>
+        <a-entity laser-controls="hand: left" raycaster="objects: .collidable; far:5000" line="color: #FFFFFF" class="laser-controls" visible="false"></a-entity>
+        <a-entity laser-controls="hand: right" raycaster="objects: .collidable; far:5000" line="color: #FFFFFF" class="laser-controls" visible="false"></a-entity>
+
+				<a-light type="ambient" color="#FFFFFF"></a-light>
 
 
         @if (isset($content['photo-spheres']) && count($content['photo-spheres']) > 0) 
 
-        <a-entity data-current-page="1" class="collidable" isvr-photosphere-menu id="photosphere-menu" visible="false">
+        <a-entity 
+						data-current-page="1" 
+						isvr-photosphere-menu 
+						id="photosphere-menu" 
+						position="0 10 -4" 
+						visible="false">
             @if (count($content['photo-spheres']) > 3)
             <a-entity isvr-photosphere-menu-navigation id="menu-arrow-up" position="0 1.5 0" visible="false" geometry="primitive: plane; width: 1; height: 0.5" material="transparent: true; opacity: 0">
                 <a-plane position="-0.07 0 0" rotation="0 0 -45" width="0.10" height="0.3" color="#0080e5"></a-plane>
@@ -43,17 +49,24 @@
             </a-entity>
             @endif
             @if (count($content['photo-spheres']) > 0) 
+            <a-plane
+								isvr-photosphere-menu-thumb="id: #photosphere-thumb-1" 
+								class="collidable" 
+								width="2" 
+								height="0.7" 
+								visible="false" 
+								position="0 0.8 0.501"> 
+            </a-plane>
             <a-image 
 								data-image-id="1" 
 								data-content-id="{{ $content['photo-spheres'][0]['photo-sphere']['#content-id'] }}" 
-								isvr-photosphere-menu-thumb 
 								id="photosphere-thumb-1" 
-								class="img-photosphere-thumb collidable" 
+								class="img-photosphere-thumb" 
 								width="2" 
 								height="0.7" 
 								position="0 0.8 0" 
-								animation__mouseenter="property: position; from: 0 0.8 0; to: 0 0.8 0.5; dur: 400; startEvents: mouseenter" 
-								animation__mouseleave="property: position; from: 0 0.8 0.5; to: 0 0.8 0; dur: 400; startEvents: mouseleave" 
+								animation__mouseenter="property: position; from: 0 0.8 0; to: 0 0.8 0.5; dur: 400; startEvents: trigger-mouseenter" 
+								animation__mouseleave="property: position; from: 0 0.8 0.5; to: 0 0.8 0; dur: 400; startEvents: trigger-mouseleave" 
 								animation__fade="property: material.opacity; to: 1; startEvents: fade" 
 								visible="false">
             </a-image>
@@ -68,17 +81,24 @@
             </a-ring>
             @endif
             @if (count($content['photo-spheres']) > 1) 
+            <a-plane
+								isvr-photosphere-menu-thumb="id: #photosphere-thumb-2" 
+								class="collidable" 
+								width="2" 
+								height="0.7" 
+								visible="false" 
+								position="0 0 0.501"> 
+            </a-plane>
             <a-image 
 								data-image-id="2" 
 								data-content-id="{{ $content['photo-spheres'][1]['photo-sphere']['#content-id'] }}" 
-								isvr-photosphere-menu-thumb 
 								id="photosphere-thumb-2" 
-								class="img-photosphere-thumb collidable" 
+								class="img-photosphere-thumb" 
 								width="2" 
 								height="0.7" 
 								position="0 0 0" 
-								animation__mouseenter="property: position; from: 0 0 0; to: 0 0 0.5; dur: 400; startEvents: mouseenter" 
-								animation__mouseleave="property: position; from: 0 0 0.5; to: 0 0 0; dur: 400; startEvents: mouseleave" 
+								animation__mouseenter="property: position; from: 0 0 0; to: 0 0 0.5; dur: 400; startEvents: trigger-mouseenter" 
+								animation__mouseleave="property: position; from: 0 0 0.5; to: 0 0 0; dur: 400; startEvents: trigger-mouseleave" 
 								animation__fade="property: material.opacity; to: 1; startEvents: fade" 
 								visible="false">
             </a-image>
@@ -93,17 +113,24 @@
             </a-ring>
             @endif
             @if (count($content['photo-spheres']) > 2) 
+            <a-plane
+								isvr-photosphere-menu-thumb="id: #photosphere-thumb-3" 
+								class="collidable" 
+								width="2" 
+								height="0.7" 
+								visible="false" 
+								position="0 -0.8 0.501"> 
+            </a-plane>
             <a-image 
 								data-image-id="3" 
 								data-content-id="{{ $content['photo-spheres'][2]['photo-sphere']['#content-id'] }}" 
-								isvr-photosphere-menu-thumb 
 								id="photosphere-thumb-3" 
-								class="img-photosphere-thumb collidable" 
+								class="img-photosphere-thumb" 
 								width="2" 
 								height="0.7" 
 								position="0 -0.8 0" 
-								animation__mouseenter="property: position; from: 0 -0.8 0; to: 0 -0.8 0.5; dur: 400; startEvents: mouseenter" 
-								animation__mouseleave="property: position; from: 0 -0.8 0.5; to: 0 -0.8 0; dur: 400; startEvents: mouseleave" 
+								animation__mouseenter="property: position; from: 0 -0.8 0; to: 0 -0.8 0.5; dur: 400; startEvents: trigger-mouseenter" 
+								animation__mouseleave="property: position; from: 0 -0.8 0.5; to: 0 -0.8 0; dur: 400; startEvents: trigger-mouseleave" 
 								animation__fade="property: material.opacity; to: 1; startEvents: fade" 
 								visible="false">
             </a-image>
@@ -242,7 +269,7 @@
                     		id="photosphere-start-btn-circle"
                         position="0 -0.2 0.03" 
                         radius="0.125" 
-                        /*animation="property: geometry.radius; to: 0.140; dur: 1300; dir: alternate; loop: true; easing: linear; pauseEvents: stop-photosphere-start-btn-anim"*/ 
+                        animation="property: geometry.radius; to: 0.140; dur: 1300; dir: alternate; loop: true; easing: linear; pauseEvents: stop-photosphere-start-btn-anim"
                         color="#0080e5">
                     </a-circle>
                     <a-text
