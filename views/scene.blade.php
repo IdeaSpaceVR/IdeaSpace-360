@@ -9,7 +9,7 @@
     @include('theme::assets')
 
 
-				<!--a-entity log geometry="primitive: plane" material="color: #111" text="color: lightgreen" position="0 1.6 -4"></a-entity//-->
+				<!--a-entity log geometry="primitive: plane" material="color: #111" text="color: lightgreen" position="0 1.6 -3"></a-entity//-->
 
 
         <a-entity id="camera-wrapper" position="0 1.6 0">
@@ -43,7 +43,14 @@
 						id="photosphere-menu" 
 						visible="false">
             @if (count($content['photo-spheres']) > 3)
-            <a-entity isvr-photosphere-menu-navigation id="menu-arrow-up" position="0 1.5 0" visible="false" geometry="primitive: plane; width: 1; height: 0.5" material="transparent: true; opacity: 0">
+            <a-entity 
+								isvr-photosphere-menu-navigation 
+								id="menu-arrow-up" 
+								class="collidable" 
+								position="0 1.5 0" 
+								visible="false" 
+								geometry="primitive: plane; width: 1; height: 0.5" 
+								material="transparent: true; opacity: 0">
                 <a-plane position="-0.07 0 0" rotation="0 0 -45" width="0.10" height="0.3" color="#0080e5"></a-plane>
                 <a-plane position="0.07 0 0" rotation="0 0 45" width="0.10" height="0.3" color="#0080e5"></a-plane>
             </a-entity>
@@ -145,7 +152,14 @@
             </a-ring>
             @endif
             @if (count($content['photo-spheres']) > 3) 
-            <a-entity isvr-photosphere-menu-navigation="url:{{ $space_url }}/content/photo-spheres?per-page=3&page=2" id="menu-arrow-down" position="0 -1.5 0" visible="@if (count($content['photo-spheres']) > 3) true @else false @endif" geometry="primitive: plane; width: 1; height: 0.5" material="transparent: true; opacity: 0">
+            <a-entity 
+								isvr-photosphere-menu-navigation="url:{{ $space_url }}/content/photo-spheres?per-page=3&page=2" 
+								id="menu-arrow-down" 
+								class="collidable" 
+								position="0 -1.5 0" 
+								visible="@if (count($content['photo-spheres']) > 3) true @else false @endif" 
+								geometry="primitive: plane; width: 1; height: 0.5" 
+								material="transparent: true; opacity: 0">
                 <a-plane position="-0.07 0 0" rotation="0 0 45" width="0.10" height="0.3" color="#0080e5"></a-plane>
                 <a-plane position="0.07 0 0" rotation="0 0 -45" width="0.10" height="0.3" color="#0080e5"></a-plane>
             </a-entity>
@@ -155,6 +169,7 @@
 
         <a-sky
 						class="collidable"
+						rotation="0 -90 0"
             isvr-init-assets="url:{{ $space_url }}/content/photo-spheres?per-page=3&page=1"
             animation__fadeout="property: material.color; from: #FFFFFF; to: #000000; dur: 500; startEvents: photosphere-fade-out"
             animation__fadein="property: material.color; from: #000000; to: #FFFFFF; dur: 500; startEvents: photosphere-fade-in"
