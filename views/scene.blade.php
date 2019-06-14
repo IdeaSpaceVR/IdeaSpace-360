@@ -9,7 +9,7 @@
     @include('theme::assets')
 
 
-				<!--a-entity log geometry="primitive: plane" material="color: #111" text="color: lightgreen" position="0 0 -4"></a-entity//-->
+				<!--a-entity log geometry="primitive: plane" material="color: #111" text="color: lightgreen" position="0 1.6 -4"></a-entity//-->
 
 
         <a-entity id="camera-wrapper" position="0 1.6 0">
@@ -20,6 +20,7 @@
                 <a-entity
                     cursor="fuse: false; rayOrigin: mouse"
                     id="cursor"
+                    raycaster="objects: .collidable; far:5000"
                     position="0 0 -1.9"
                     geometry="primitive: circle; radius: 0.02;"
                     material="color: #FFFFFF; shader: flat;"
@@ -287,30 +288,6 @@
                 </a-entity>
             </a-entity>
         </a-entity><!-- intro-0 //-->
-
-        <a-entity
-            id="no-hmd-intro"
-            visible="false"
-            position="0 0.85 -2.1"
-            geometry="primitive: plane; width: 1.8; height: 0.46"
-            material="color: #FFFFFF; transparent: true; opacity: 0.5">
-            <a-entity
-                geometry="primitive: plane; width: 1.74; height: 0.4"
-                position="0 0 0.01"
-                material="color: #606060">
-                <a-entity 
-                    geometry="primitive: plane; width: 1.6; height: 0.35"
-                    position="0 0.01 0.02" 
-                    material="color: #606060">
-                    <a-text
-                        value="No VR headset connected. Click and drag to look around and click to select items. Press space bar on a PC or touch click on a mobile device to view photo sphere menu."
-                        color="#FFFFFF"
-                        anchor="center"
-                        width="1.6">
-                    </a-text>
-                </a-entity>
-            </a-entity>
-        </a-entity><!-- no-hmd-intro //-->
 
     </a-scene>
 
