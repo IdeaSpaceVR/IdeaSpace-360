@@ -1,3 +1,9 @@
+## 2.0
+
+- Updated to A-Frame v0.9.2
+- Removed animation component (deprecated)
+- Added anti-aliasing
+
 ## 1.7
 
 - Hide controller models if HMD is connected but site is used in desktop mode
