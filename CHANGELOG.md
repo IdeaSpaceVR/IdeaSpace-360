@@ -1,8 +1,7 @@
-## 2.0
+## 2.1
 
-- Updated to A-Frame v0.9.2
-- Removed animation component (deprecated)
-- Added anti-aliasing
+- Update to A-Frame v1.0.3
+- WebXR Device API support added
 
 ## 1.7
 
